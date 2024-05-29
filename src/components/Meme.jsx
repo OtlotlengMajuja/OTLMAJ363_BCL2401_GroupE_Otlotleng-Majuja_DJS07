@@ -4,9 +4,9 @@ export default function Meme() {
   return (
     <main>
       <form>
-        <input />
-        <input />
-        <button></button>
+        <input type="text" />
+        <input type="text" />
+        <button>Get a new meme image 🖼</button>
       </form>
     </main>
   );
