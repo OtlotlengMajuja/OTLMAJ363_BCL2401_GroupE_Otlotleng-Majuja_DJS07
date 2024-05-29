@@ -1,7 +1,9 @@
-import React from "react"
+import React from "react";
 
 export default function Meme() {
-    return (
-        
-    )
+  return (
+    <main>
+      <form></form>
+    </main>
+  );
 }
