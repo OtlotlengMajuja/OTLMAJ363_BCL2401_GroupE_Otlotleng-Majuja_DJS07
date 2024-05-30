@@ -20,6 +20,8 @@ export default function Meme() {
     }));
   }
 
+  function handleChange(event) {}
+
   return (
     <main>
       <div className="form">
