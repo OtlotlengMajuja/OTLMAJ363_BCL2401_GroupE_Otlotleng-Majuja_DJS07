@@ -1,6 +1,7 @@
 import React from "react";
 
 export default function Meme() {
+  // Set the initial state with React.useState.
   const [meme, setMeme] = React.useState({
     topText: "",
     bottomText: "",
@@ -8,7 +9,7 @@ export default function Meme() {
   });
 
   const [allMemes, setAllMemes] = React.useState([]);
-
+  // `useEffect` method fetches meme data from the API once after the initial render
   React.useEffect(() => {
     async function getMemes() {
       const res = await fetch("https://api.imgflip.com/get_memes");
@@ -18,15 +19,19 @@ export default function Meme() {
     getMemes();
   }, []);
 
+  //
   function getMemeImage() {
+    // Used the Math functions to generate a random image
     const randomNumber = Math.floor(Math.random() * allMemes.length);
     const url = allMemes[randomNumber].url;
+    // Fetch new meme by selecting the image's URL.
     setMeme((prevMeme) => ({
       ...prevMeme,
       randomImage: url,
     }));
   }
 
+  // Handles the text input changes
   function handleChange(event) {
     const { name, value } = event.target;
     setMeme((prevMeme) => ({
@@ -35,6 +40,10 @@ export default function Meme() {
     }));
   }
 
+  /*
+  Return method renders the fields for top and bottom text, and renders a button to fetch a new image. 
+  Then displays the image and text dynamically.
+  */
   return (
     <main>
       <div className="form">

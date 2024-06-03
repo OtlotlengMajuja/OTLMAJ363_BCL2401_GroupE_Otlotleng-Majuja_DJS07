@@ -1,4 +1,5 @@
 export default function Header() {
+  // Displays the title of the app, along with the image and subtitle for the header section
   return (
     <header className="header">
       <img src="src\components\troll-face.png" className="header--image" />
